@@ -3,9 +3,15 @@ purgatoryUnity/Temp/
 **/Temp/
 **/obj
 **/library
+*.svd
+*.userprefs
 *.csproj
-*.unityproj
+*.pidb
+*.suo
 *.sln
+*.user
+*.unityproj
+*.booproj
 
 #OS Files
 *.DS_Store
