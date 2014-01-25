@@ -26,8 +26,8 @@ public class PlayerKiller : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider collider) {
-		//Debug.Log ("Collided with " + collider.gameObject.tag);
+	void OnTriggerEnter2D(Collider2D collider) {
+		Debug.Log ("Collided with " + collider.gameObject.tag);
 
 		switch(obstacleType) {
 			case ObstacleType.PIT:
@@ -46,6 +46,7 @@ public class PlayerKiller : MonoBehaviour {
 //				Player.GetComponent<PlayerController>().stopPlayer();
 				break;
 			case ObstacleType.FENCE:
+				Application.LoadLevel( "Lose" );
 				if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") {
 					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
 				}
