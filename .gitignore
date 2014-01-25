@@ -1,1 +1,13 @@
+#Unity Temp Files
 purgatoryUnity/Temp/
+**/Temp/
+
+#OS Files
+*.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
