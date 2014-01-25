@@ -1,6 +1,11 @@
 #Unity Temp Files
 purgatoryUnity/Temp/
 **/Temp/
+**/obj
+**/library
+*.csproj
+*.unityproj
+*.sln
 
 #OS Files
 *.DS_Store
