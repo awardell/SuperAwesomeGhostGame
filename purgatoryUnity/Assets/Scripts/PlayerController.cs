@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 	Direction direction;
 	Direction badDirection = Direction.None;
 
+	Vector3 prevPos;
+
 	// Use this for initialization
 	void Start () {
 		direction = Direction.None;
@@ -27,11 +29,13 @@ public class PlayerController : MonoBehaviour {
 	public void stopPlayer(Direction _badDirection) {//Prevent players from clipping through walls
 		direction = Direction.None;
 		badDirection = _badDirection;
+		this.transform.position = prevPos;
 	}
 
 	// Update is called once per frame
 	void Update () {
-	
+		prevPos = this.transform.position;
+
 		if (Input.GetKey("up") && badDirection != Direction.Up) {
 			direction = Direction.Up;
 		} else if (Input.GetKey("down") && badDirection != Direction.Down) {

@@ -6,14 +6,21 @@ public class EnemyMirror : MonoBehaviour {
 	public Transform player;
 	public bool mirrorX = false;
 	public bool mirrorY = false;
+	public Vector3 prevPos;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
 	}
-	
+
+	public void moveFromCollision() {
+		this.transform.position = prevPos;
+	}
+
 	// Update is called once per frame
-	void Update () {
+	protected abstract virtual void Update () {
+		prevPos = this.transform.position;
+
 		this.rigidbody.velocity = new Vector3(
 			player.rigidbody.velocity.x * (mirrorX ? -1 : 1),
 			player.rigidbody.velocity.y * (mirrorY ? -1 : 1),

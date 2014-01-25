@@ -38,16 +38,16 @@ public class PlayerKiller : MonoBehaviour {
 				}
 				break;
 			case ObstacleType.WALLEDGE:
-				if(collider.gameObject.tag == "Player") {
+				if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") {
 					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
-				} else if (collider.gameObject.tag == "Enemy") {
-					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
+					Enemy.GetComponent<EnemyMirror>().moveFromCollision();
 				}
 //				Player.GetComponent<PlayerController>().stopPlayer();
 				break;
 			case ObstacleType.FENCE:
 				if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") {
 					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
+					Enemy.GetComponent<EnemyMirror>().moveFromCollision();
 				}
 				break;
 			default:
