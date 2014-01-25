@@ -39,7 +39,7 @@ public class PlayerKiller : MonoBehaviour {
 				break;
 			case ObstacleType.WALLEDGE:
 				if(collider.gameObject.tag == "Player") {
-					Application.LoadLevel("Lose");
+					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
 				} else if (collider.gameObject.tag == "Enemy") {
 					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
 				}
