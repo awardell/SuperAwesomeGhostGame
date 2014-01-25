@@ -10,7 +10,8 @@ public class PlayerKiller : MonoBehaviour {
 	public enum ObstacleType {//Might need this to discern the game wall to make sure the ghost doesn't go through that
 		NONE,
 		PIT,
-		WALLEDGE
+		WALLEDGE,
+		FENCE
 	};
 	public ObstacleType obstacleType;
 
@@ -43,6 +44,11 @@ public class PlayerKiller : MonoBehaviour {
 					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
 				}
 //				Player.GetComponent<PlayerController>().stopPlayer();
+				break;
+			case ObstacleType.FENCE:
+				if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") {
+					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
+				}
 				break;
 			default:
 				break;
