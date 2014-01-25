@@ -26,8 +26,8 @@ public class PlayerKiller : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider collider) {
-		//Debug.Log ("Collided with " + collider.gameObject.tag);
+	void OnTriggerEnter2D(Collider2D collider) {
+		Debug.Log ("Collided with " + collider.gameObject.tag);
 
 		switch(obstacleType) {
 			case ObstacleType.PIT:

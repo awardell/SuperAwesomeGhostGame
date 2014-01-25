@@ -53,27 +53,27 @@ public class PlayerController : MonoBehaviour {
 		
 		switch (direction) {
 			case Direction.Up:
-				this.rigidbody.velocity = new Vector3(0f, speed, 0f);
+				this.rigidbody2D.velocity = new Vector3(0f, speed, 0f);
 				if(badDirection == Direction.Down)
 					badDirection = Direction.None;
 				break;
 			case Direction.Down:
-				this.rigidbody.velocity = new Vector3(0f,-speed, 0f);
+				this.rigidbody2D.velocity = new Vector3(0f,-speed, 0f);
 				if(badDirection == Direction.Up)
 					badDirection = Direction.None;
 				break;
 			case Direction.Right:
-				this.rigidbody.velocity = new Vector3(speed, 0f, 0f);
+				this.rigidbody2D.velocity = new Vector3(speed, 0f, 0f);
 				if(badDirection == Direction.Left)
 					badDirection = Direction.None;
 				break;
 			case Direction.Left:
-				this.rigidbody.velocity = new Vector3(-speed, 0f, 0f);
+				this.rigidbody2D.velocity = new Vector3(-speed, 0f, 0f);
 				if(badDirection == Direction.Right)
 					badDirection = Direction.None;
 				break;
 			case Direction.None:
-				this.rigidbody.velocity = Vector3.zero;
+				this.rigidbody2D.velocity = Vector3.zero;
 				break;
 		}
 	}

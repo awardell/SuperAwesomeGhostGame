@@ -15,14 +15,13 @@ public class EnemyMirror : EnemyMove {
 		this.transform.position = prevPos;
 	}
 
-	// Update is called once per frame
-	public void Update () {
+	// Update is called once per frame\
+	protected void Update () {
 		prevPos = this.transform.position;
 
-		this.rigidbody.velocity = new Vector3(
-			player.rigidbody.velocity.x * (mirrorX ? -1 : 1),
-			player.rigidbody.velocity.y * (mirrorY ? -1 : 1),
-			player.rigidbody.velocity.z
+		this.rigidbody2D.velocity = new Vector3(
+			player.rigidbody2D.velocity.x * (mirrorX ? -1 : 1),
+			player.rigidbody2D.velocity.y * (mirrorY ? -1 : 1)
 		);
 	}
 }
