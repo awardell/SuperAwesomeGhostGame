@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void startPlayer() {
-		moving = true;
+		// in case moving is reintegrated
 	}
 
 	public void stopPlayer() {
@@ -45,9 +45,6 @@ public class PlayerController : MonoBehaviour {
 			SetDirection(Direction.Left);
 		} else if (Input.GetKey("right") && badDirection != Direction.Right) {
 			SetDirection(Direction.Right);
-		}
-		else {
-//			moving = false;
 		}
 		
 		switch (direction) {
