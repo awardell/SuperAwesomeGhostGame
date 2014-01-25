@@ -2,7 +2,7 @@
 purgatoryUnity/Temp/
 **/Temp/
 **/obj
-**/library
+**/Library
 *.svd
 *.userprefs
 *.csproj
