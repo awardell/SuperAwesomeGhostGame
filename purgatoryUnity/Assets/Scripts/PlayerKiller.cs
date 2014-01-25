@@ -3,11 +3,21 @@ using System.Collections;
 
 public class PlayerKiller : MonoBehaviour {
 
+	public GameObject Player;
+	public GameObject Enemy;
+
 	public bool isPit = false;
+	public enum ObstacleType {//Might need this to discern the game wall to make sure the ghost doesn't go through that
+		NONE,
+		PIT,
+		WALLEDGE
+	};
+	public ObstacleType obstacleType;
 
 	// Use this for initialization
 	void Start () {
-	
+		Player = GameObject.FindGameObjectWithTag("Player");
+		Enemy = GameObject.FindGameObjectWithTag("Enemy");
 	}
 	
 	// Update is called once per frame
@@ -17,10 +27,33 @@ public class PlayerKiller : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider) {
 		//Debug.Log ("Collided with " + collider.gameObject.tag);
-		if (collider.gameObject.tag == "Player") {
-			Application.LoadLevel("Lose");
-		} else if (isPit && collider.gameObject.tag == "Enemy") {
-			Application.LoadLevel(Application.loadedLevel+1);
+
+		switch(obstacleType) {
+			case ObstacleType.PIT:
+				if(collider.gameObject.tag == "Player") {
+					Application.LoadLevel("Lose");
+				} else if (isPit && collider.gameObject.tag == "Enemy") {
+					Application.LoadLevel(Application.loadedLevel+1);
+				}
+				break;
+			case ObstacleType.WALLEDGE:
+				if(collider.gameObject.tag == "Player") {
+					Application.LoadLevel("Lose");
+				} else if (collider.gameObject.tag == "Enemy") {
+					Player.GetComponent<PlayerController>().stopPlayer(Player.GetComponent<PlayerController>().GetDirection());
+				}
+//				Player.GetComponent<PlayerController>().stopPlayer();
+				break;
+			default:
+				break;
 		}
+
+
+//		if (collider.gameObject.tag == "Player") {
+//			Application.LoadLevel("Lose");
+//		} else if (isPit && collider.gameObject.tag == "Enemy") {
+//			Application.LoadLevel(Application.loadedLevel+1);
+//		}
+
 	}
 }
