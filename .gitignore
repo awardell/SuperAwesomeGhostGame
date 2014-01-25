@@ -1,6 +1,8 @@
 purgatoryUnity/Temp/
 purgatoryUnity/Library/
 purgatoryUnity/Obj/
+purgatoryiOS/
+purgatoryAndroid/
  
 *.csproj
 *.unityproj

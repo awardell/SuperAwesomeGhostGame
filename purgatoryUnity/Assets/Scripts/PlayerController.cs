@@ -16,10 +16,15 @@ public class PlayerController : MonoBehaviour {
 
 	public void SetDirection(Direction newDirection) {
 		direction = newDirection;
+		startPlayer ();
 	}
 
 	public Direction GetDirection() {
 		return direction;
+	}
+
+	public void startPlayer() {
+		moving = true;
 	}
 
 	public void stopPlayer() {
@@ -34,18 +39,13 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 	
 		if (Input.GetKey("up") && badDirection != Direction.Up) {
-			direction = Direction.Up;
-			moving = true;
+			SetDirection(Direction.Up);
 		} else if (Input.GetKey("down") && badDirection != Direction.Down) {
-			direction = Direction.Down;
-			moving = true;
-
+			SetDirection(Direction.Down);
 		} else if (Input.GetKey("left") && badDirection != Direction.Left) {
-			direction = Direction.Left;
-			moving = true;
+			SetDirection(Direction.Left);
 		} else if (Input.GetKey("right") && badDirection != Direction.Right) {
-			direction = Direction.Right;
-			moving = true;
+			SetDirection(Direction.Right);
 		}
 		else {
 //			moving = false;
