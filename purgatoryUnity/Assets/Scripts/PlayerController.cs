@@ -17,10 +17,15 @@ public class PlayerController : MonoBehaviour {
 
 	public void SetDirection(Direction newDirection) {
 		direction = newDirection;
+		startPlayer ();
 	}
 
 	public Direction GetDirection() {
 		return direction;
+	}
+
+	public void startPlayer() {
+		// in case moving is reintegrated
 	}
 
 	public void stopPlayer() {
@@ -37,16 +42,13 @@ public class PlayerController : MonoBehaviour {
 		prevPos = this.transform.position;
 
 		if (Input.GetKey("up") && badDirection != Direction.Up) {
-			direction = Direction.Up;
+			SetDirection(Direction.Up);
 		} else if (Input.GetKey("down") && badDirection != Direction.Down) {
-			direction = Direction.Down;
+			SetDirection(Direction.Down);
 		} else if (Input.GetKey("left") && badDirection != Direction.Left) {
-			direction = Direction.Left;
+			SetDirection(Direction.Left);
 		} else if (Input.GetKey("right") && badDirection != Direction.Right) {
-			direction = Direction.Right;
-		}
-		else {
-//			moving = false;
+			SetDirection(Direction.Right);
 		}
 		
 		switch (direction) {
