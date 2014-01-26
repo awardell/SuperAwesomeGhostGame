@@ -10,6 +10,10 @@ public class Follow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	}
+
+	void Awake() {
+		objectToTrack = GameObject.Find ("SpotTarget");
+	}
 	
 	// Just a simple script that looks at the target transform.
 	void Update () {
