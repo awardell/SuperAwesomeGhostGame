@@ -46,9 +46,12 @@ public class PlayerKiller : MonoBehaviour {
 				}
 				break;
 			case ObstacleType.WALLEDGE:
-				if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") {
+				if(collider.gameObject.tag == "Player") {
 					Player.GetComponent<PlayerController>().stopPlayer();
 //					Enemy.GetComponent<EnemyMove>().moveFromCollision();
+				}
+				else if (collider.gameObject.tag == "Enemy") {
+					Enemy.GetComponent<GravityWell>().reverseMovement();
 				}
 //				Player.GetComponent<PlayerController>().stopPlayer();
 				break;
