@@ -17,6 +17,7 @@ public class LevelControl : MonoBehaviour {
 		EndingAudio = GameObject.Find("EndingAudio");
 		Narration = GameObject.Find("Narration");
 		Fader = GameObject.Find ("Fader");
+		Debug.Log("Resolution: ( " + Screen.currentResolution.height.ToString() + " , " + Screen.currentResolution.width.ToString() + " )");
 	}
 	// Use this for initialization
 	void Start () {

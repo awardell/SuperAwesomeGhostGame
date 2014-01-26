@@ -5,7 +5,7 @@ public class PlayerKiller : MonoBehaviour {
 
 	public GameObject Player;
 	public GameObject Enemy;
-	public GameObject camera;
+	public GameObject mainCam;
 
 	public bool isPit = false;
 	public enum ObstacleType {//Might need this to discern the game wall to make sure the ghost doesn't go through that
@@ -21,7 +21,7 @@ public class PlayerKiller : MonoBehaviour {
 	void Awake () {
 		Player = GameObject.FindGameObjectWithTag("Player");
 		Enemy = GameObject.FindGameObjectWithTag("Enemy");
-		camera = GameObject.Find("Camera");
+		mainCam = GameObject.Find("Camera");
 	}
 
 	void Start() {
@@ -38,10 +38,10 @@ public class PlayerKiller : MonoBehaviour {
 		switch(obstacleType) {
 			case ObstacleType.PIT:
 				if(collider.gameObject.tag == "Player") {
-					camera.GetComponent<LevelControl>().lose();
+					mainCam.GetComponent<LevelControl>().lose();
 					freezeGame();
 				} else if (isPit && collider.gameObject.tag == "Enemy") {
-					camera.GetComponent<LevelControl>().win();
+					mainCam.GetComponent<LevelControl>().win();
 					freezeGame();
 //					Application.LoadLevel(Application.loadedLevel+1);
 				}
@@ -61,7 +61,7 @@ public class PlayerKiller : MonoBehaviour {
 				break;
 			case ObstacleType.ENEMY:
 				if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") {
-					camera.GetComponent<LevelControl>().lose();
+					mainCam.GetComponent<LevelControl>().lose();
 					freezeGame();
 				}
 				break;
