@@ -20,6 +20,7 @@ public class LevelControl : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+		Fader.transform.position += new Vector3(0,0,101);
 		StartCoroutine("FadeIn");
 	}
 	
