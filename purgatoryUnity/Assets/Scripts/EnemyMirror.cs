@@ -7,7 +7,7 @@ public class EnemyMirror : EnemyMove {
 	public bool mirrorY = false;
 	public float speed = 1;
 
-	public bool everyOther = false;
+	private bool everyOther = false;
 	private bool isOther = false;
 
 	public bool repeatedlyFlip = false;
@@ -36,7 +36,7 @@ public class EnemyMirror : EnemyMove {
 
 	// Update is called once per frame\
 	protected void Update () {
-		if (everyOther && pc.direction != pc.prevDirection) { isOther = !isOther; }
+		//if (everyOther && pc.direction != pc.prevDirection) { isOther = !isOther; }
 		UpdatePrev ();
 		if (!isOther) {
 			this.rigidbody2D.velocity = new Vector3(
