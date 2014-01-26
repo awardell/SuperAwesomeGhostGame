@@ -40,6 +40,7 @@ public class EnemySteer : EnemyMove {
 				//Debug.Log (3);
 			}
 		}
+		/*
 		else {
 			if (vel.magnitude < accelmin)
 			{
@@ -52,6 +53,7 @@ public class EnemySteer : EnemyMove {
 				//Debug.Log (5);
 			}
 		}
+		*/
 		this.rigidbody2D.velocity = vel;
 		Debug.Log (vel);
 	}
