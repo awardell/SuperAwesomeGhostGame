@@ -6,6 +6,7 @@ public abstract class EnemyMove : MonoBehaviour {
 	public Transform player;
 	
 	public Vector3 prevPos;
+	public Vector3 prevVel;
 
 	public void moveFromCollision() {
 		this.transform.position = prevPos;
@@ -20,5 +21,6 @@ public abstract class EnemyMove : MonoBehaviour {
 	protected void UpdatePrev()
 	{
 		prevPos = this.transform.position;
+		prevVel = this.rigidbody2D.velocity;
 	}
 }
