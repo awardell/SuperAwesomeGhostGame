@@ -77,4 +77,7 @@ public class GravityWell : MonoBehaviour {
 	public void reverseMovement() {
 		transform.position -= new Vector3(rigidbody2D.velocity.x, rigidbody2D.velocity.y, 0) * Time.deltaTime;
 	}
+	public void forceMovement() {
+		transform.position += new Vector3(rigidbody2D.velocity.x, rigidbody2D.velocity.y, 0);
+	}
 }

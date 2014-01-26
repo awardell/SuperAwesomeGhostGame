@@ -31,6 +31,25 @@ public class PlayerKiller : MonoBehaviour {
 	void Update () {
 	}
 
+	void OnCollisionEnter2D(Collision2D collider) {
+		if(obstacleType == ObstacleType.FENCE && collider.gameObject.tag == "Enemy") {
+//			Enemy.GetComponent<GravityWell>().forceMovement();
+			collider.collider.enabled = false;
+			StartCoroutine("ReenableCollider");
+		}
+	}
+
+	IEnumerator ReenableCollider() {
+		yield return new WaitForSeconds(1);
+		Enemy.collider2D.enabled = true;
+	}
+
+	void OnCollisionStay2D(Collision2D collider) {
+		if(obstacleType == ObstacleType.FENCE && collider.gameObject.tag == "Enemy") {
+//			Enemy.GetComponent<GravityWell>().forceMovement();
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D collider) {
 		Debug.Log ("Collided with " + collider.gameObject.tag);
 
@@ -60,7 +79,10 @@ public class PlayerKiller : MonoBehaviour {
 					Player.GetComponent<PlayerController>().stopPlayer();
 //					Enemy.GetComponent<EnemyMirror>().moveFromCollision();
 				}
-				break;
+				else if (collider.gameObject.tag == "Enemy") {
+//					Enemy.GetComponent<GravityWell>().forceMovement();
+				}
+			break;
 			case ObstacleType.ENEMY:
 				if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") {
 					mainCam.GetComponent<LevelControl>().lose();
