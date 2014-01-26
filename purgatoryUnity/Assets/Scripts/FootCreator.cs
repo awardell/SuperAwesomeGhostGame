@@ -9,6 +9,10 @@ public class FootCreator : MonoBehaviour {
 	public float offset = -1.0f;
 	Vector3 lastSpawn;
 	public float spawnDistance = 0.50f;
+	int footStepNumber = 1;
+
+	void Awake() {
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -45,9 +49,23 @@ public class FootCreator : MonoBehaviour {
 				tempFoot = (GameObject)Instantiate(Resources.Load("Foot"), footLoc, footRot);
 				tempFoot.transform.localScale = new Vector3(tempFoot.transform.localScale.x * -1, tempFoot.transform.localScale.y, tempFoot.transform.localScale.z);
 			}
-
+			StartCoroutine("playFootstep");
 			spawnLeft = !spawnLeft;
 //			spawnTimer = 0.0f;
 		}
+	}
+
+	IEnumerator playFootstep() {
+		AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+		audioSource.clip = Resources.Load("step"+footStepNumber.ToString()) as AudioClip;
+		audioSource.Play();
+
+		footStepNumber ++;
+		if(footStepNumber > 4) {
+			footStepNumber = 1;
+		}
+
+		yield return new WaitForSeconds(2);
+		Destroy(audioSource);
 	}
 }
