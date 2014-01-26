@@ -29,7 +29,6 @@ public class PlayerKiller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
@@ -40,7 +39,7 @@ public class PlayerKiller : MonoBehaviour {
 				if(collider.gameObject.tag == "Player") {
 					mainCam.GetComponent<LevelControl>().lose();
 					freezeGame();
-				} else if (isPit && collider.gameObject.tag == "Enemy") {
+				} else if (collider.gameObject.tag == "Enemy") {
 					mainCam.GetComponent<LevelControl>().win();
 					freezeGame();
 //					Application.LoadLevel(Application.loadedLevel+1);
@@ -79,6 +78,7 @@ public class PlayerKiller : MonoBehaviour {
 	}
 
 	void freezeGame() {
+		Enemy.GetComponent<GravityWell>().affected = false;
 		Player.rigidbody2D.velocity = Vector3.zero;
 		Player.GetComponent<PlayerController>().enabled = false;
 		Enemy.rigidbody2D.velocity = Vector3.zero;

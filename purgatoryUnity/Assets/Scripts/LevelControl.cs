@@ -17,11 +17,11 @@ public class LevelControl : MonoBehaviour {
 		EndingAudio = GameObject.Find("EndingAudio");
 		Narration = GameObject.Find("Narration");
 		Fader = GameObject.Find ("Fader");
-		Debug.Log("Resolution: ( " + Screen.currentResolution.height.ToString() + " , " + Screen.currentResolution.width.ToString() + " )");
+//		Debug.Log("Resolution: ( " + Screen.currentResolution.height.ToString() + " , " + Screen.currentResolution.width.ToString() + " )");
 	}
 	// Use this for initialization
 	void Start () {
-		Fader.transform.position = new Vector3(0,0,0.5f);
+		Fader.transform.position = new Vector3(0,0,-5.00f);
 		StartCoroutine("FadeIn");
 	}
 	
@@ -35,6 +35,7 @@ public class LevelControl : MonoBehaviour {
 	}
 
 	public void lose() {
+		GameObject.FindGameObjectWithTag("Player").GetComponent<CandleScript>().Extinguish();
 		StartCoroutine("FadeOutBlack");
 	}
 
