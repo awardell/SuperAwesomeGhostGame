@@ -3,11 +3,11 @@ using System.Collections;
 
 public class EnemyMirror : EnemyMove {
 
-	public bool mirrorX, mirrorY;
+	public bool mirrorX = false, mirrorY = false;
 
 	// Use this for initialization
 	void Start () {
-		mirrorX = mirrorY = false;
+
 	}
 
 
