@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 	public void stopPlayer(Direction _badDirection) {//Prevent players from clipping through walls
 		direction = Direction.None;
 		badDirection = _badDirection;
-		this.transform.position = prevPos;
+		//this.transform.position = prevPos;
 	}
 
 	// Update is called once per frame
