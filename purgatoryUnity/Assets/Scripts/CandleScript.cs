@@ -29,6 +29,16 @@ public class CandleScript : MonoBehaviour {
 //			if(state == CandleState.UNLIT)
 //				Light();
 //		}
+		if(type == CandleType.PLAYER) {
+			if (Input.GetMouseButton(0)) {
+				if(state == CandleState.UNLIT)
+					Light();
+			}
+			else {
+				if(state == CandleState.BURNING)
+					Extinguish();
+			}
+		}
 
 		flicker += Time.deltaTime;
 		switch (state) {
