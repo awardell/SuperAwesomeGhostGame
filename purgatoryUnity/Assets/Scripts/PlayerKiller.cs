@@ -58,6 +58,7 @@ public class PlayerKiller : MonoBehaviour {
 					Player.GetComponent<PlayerController>().stopPlayer();
 //					Enemy.GetComponent<EnemyMirror>().moveFromCollision();
 				}
+				break;
 			case ObstacleType.ENEMY:
 				if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") {
 					camera.GetComponent<LevelControl>().lose();
