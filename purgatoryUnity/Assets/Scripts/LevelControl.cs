@@ -12,6 +12,8 @@ public class LevelControl : MonoBehaviour {
 	public AudioClip winSound;
 	public AudioClip loseSound;
 
+	public string nextLevel;
+
 	void Awake() {
 		BackgroundAudio = GameObject.Find("BackgroundAudio");
 		EndingAudio = GameObject.Find("EndingAudio");
@@ -76,7 +78,7 @@ public class LevelControl : MonoBehaviour {
 			Fader.renderer.material.color = color;
 			yield return null;
 		}
-		Application.LoadLevel(Application.loadedLevel+1);
+		Application.LoadLevel(nextLevel);//Application.loadedLevel+1);
 	}
 
 	IEnumerator FadeIn() {
