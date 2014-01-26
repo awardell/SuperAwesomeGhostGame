@@ -21,8 +21,8 @@ public class Follow : MonoBehaviour {
 		float shaftHeight = lookVec.magnitude;
 		float shaftRadius = Mathf.Tan( Mathf.Deg2Rad*light.spotAngle ) * shaftHeight;
 
-		Debug.Log ("DistToTarget = " + shaftHeight);
-		Debug.Log ("ShaftRadius = " + shaftRadius);
+//		Debug.Log ("DistToTarget = " + shaftHeight);
+//		Debug.Log ("ShaftRadius = " + shaftRadius);
 
 		transform.LookAt(objectToTrack.transform);
 
