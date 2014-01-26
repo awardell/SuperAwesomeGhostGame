@@ -3,8 +3,8 @@ using System.Collections;
 
 public class FootCreator : MonoBehaviour {
 
-	float spawnTimer = 0.0f;
-	float spawnRate = 0.5f;
+//	float spawnTimer = 0.0f;
+//	float spawnRate = 0.5f;
 	bool spawnLeft = true;
 	public float offset = -1.0f;
 	Vector3 lastSpawn;
@@ -47,7 +47,7 @@ public class FootCreator : MonoBehaviour {
 			}
 
 			spawnLeft = !spawnLeft;
-			spawnTimer = 0.0f;
+//			spawnTimer = 0.0f;
 		}
 	}
 }
