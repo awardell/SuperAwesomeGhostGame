@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 00cb070dd111a10498afebd861014985
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - BackgroundAudio: {instanceID: 0}
+  - EndingAudio: {instanceID: 0}
+  - Narration: {instanceID: 0}
+  - Fader: {instanceID: 0}
+  - winSound: {fileID: 8300000, guid: 8a2183ad7d165df44a20e71974270a63, type: 3}
+  - loseSound: {fileID: 8300000, guid: 068764a64d1ea82408e25e6dc59c9eaf, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

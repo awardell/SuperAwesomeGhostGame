@@ -4,10 +4,10 @@ using System.Collections;
 public class EnemySteer : EnemyMove {
 
 	public Transform target;
-	public float leash;
-	public float accelmin;
-	public float accelamount;
-	public float velocitymax;
+	public float leash = 5f;
+	public float accelmin = .2f;
+	public float accelamount = 1.07f;
+	public float velocitymax = 2f;
 
 	private Vector3 vel;
 	private Vector3 pos;
