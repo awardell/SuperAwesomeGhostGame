@@ -5,14 +5,17 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 5f;
 	public enum Direction { Up, Right, Down, Left, None };
-	Direction direction;
+	public Direction direction;
 	Direction badDirection = Direction.None;
 
-	Vector3 prevPos;
+	public Vector3 prevPos;
+	public Vector2 prevVel;
+	public Direction prevDirection;
 
 	// Use this for initialization
 	void Start () {
 		direction = Direction.None;
+		this.rigidbody2D.velocity = Vector2.zero;
 	}
 
 	public void SetDirection(Direction newDirection) {
@@ -41,6 +44,8 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		prevPos = this.transform.position;
 
+		prevDirection = direction;
+
 		if (Input.GetKey("up") && badDirection != Direction.Up) {
 			SetDirection(Direction.Up);
 		} else if (Input.GetKey("down") && badDirection != Direction.Down) {
@@ -50,7 +55,8 @@ public class PlayerController : MonoBehaviour {
 		} else if (Input.GetKey("right") && badDirection != Direction.Right) {
 			SetDirection(Direction.Right);
 		}
-		
+
+		//prevVel = this.rigidbody2D.velocity;
 		switch (direction) {
 			case Direction.Up:
 				this.rigidbody2D.velocity = new Vector3(0f, speed, 0f);
