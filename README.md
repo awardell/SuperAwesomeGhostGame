@@ -16,8 +16,8 @@ Will (anything guy)
 Graydon (voice actor/writer)
 Kyle/Fletcher (music guy)
 Brian (visuals programmer)
-George (symmetry fan programmer/gamedes)
-Darren (expression through gameplay programmer)
+Jorge (symmetry fan programmer/gamedes)
+Daron (expression through gameplay programmer)
 
 Game:
 Purgatory
