@@ -6,7 +6,8 @@ purgatoryAndroid/
 purgatoryApp/
 purgatoryExe/
 purgatoryWeb/
- 
+
+purgatoryUnity.zip 
 *.csproj
 *.unityproj
 *.sln
