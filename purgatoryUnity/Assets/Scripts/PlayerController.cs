@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour {
 
 		prevDirection = direction;
 
+		/* Controls through Keyboard permanently disabled, using mouse/touch instead
 		if (Input.GetKey("up") && badDirection != Direction.Up) {
 			SetDirection(Direction.Up);
 		} else if (Input.GetKey("down") && badDirection != Direction.Down) {
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 			SetDirection(Direction.Left);
 		} else if (Input.GetKey("right") && badDirection != Direction.Right) {
 			SetDirection(Direction.Right);
-		}
+		} */
 
 		//prevVel = this.rigidbody2D.velocity;
 		switch (direction) {
