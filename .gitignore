@@ -3,6 +3,9 @@ purgatoryUnity/Library/
 purgatoryUnity/Obj/
 purgatoryiOS/
 purgatoryAndroid/
+purgatoryApp/
+purgatoryExe/
+purgatoryWeb/
  
 *.csproj
 *.unityproj
