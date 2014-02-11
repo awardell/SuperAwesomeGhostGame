@@ -8,7 +8,7 @@ public class LevelControl : MonoBehaviour {
 	public GameObject Narration;
 	public GameObject Fader;
 
-	public float fadeDuration = 6.00f;
+	public float fadeDuration = 2.00f;
 	public AudioClip winSound;
 	public AudioClip loseSound;
 
